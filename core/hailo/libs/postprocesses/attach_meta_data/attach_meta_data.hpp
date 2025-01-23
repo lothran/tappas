@@ -5,6 +5,7 @@
 #pragma once
 #include "hailo_objects.hpp"
 #include "hailo_common.hpp"
+#include <gst/gst.h>
 
 
 __BEGIN_DECLS

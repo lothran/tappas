@@ -17,6 +17,6 @@ void filter(HailoROIPtr roi, GstVideoFrame *frame) {
   auto meta_info = gst_meta_register_custom("mymeta", tags, NULL, NULL, NULL);
   auto meta = gst_buffer_add_custom_meta(*frame.buffer, "mymeta");
   auto metadata = gst_custom_meta_get_structure(meta);
-  auto str = g_string_new(buffer.GetString())
-      gst_structure_set(metadata, "property_name", G_TYPE_STRING, str, nullptr);
+  auto str = g_string_new(buffer.GetString());
+  gst_structure_set(metadata, "property_name", G_TYPE_STRING, str, nullptr);
 }

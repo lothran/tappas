@@ -1,13 +1,13 @@
 /**
-* Copyright (c) 2021-2022 Hailo Technologies Ltd. All rights reserved.
-* Distributed under the LGPL license (https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt)
-**/
+ * Copyright (c) 2021-2022 Hailo Technologies Ltd. All rights reserved.
+ * Distributed under the LGPL license
+ *(https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt)
+ **/
 #pragma once
-#include "hailo_objects.hpp"
 #include "hailo_common.hpp"
-#include <gst/gst.h>
-
+#include "hailo_objects.hpp"
+#include <gst/video/video.h>
 
 __BEGIN_DECLS
- void filter(HailoROIPtr roi,GstVideoFrame * frame);
+void filter(HailoROIPtr roi, GstVideoFrame *frame);
 __END_DECLS

@@ -5,6 +5,8 @@
  **/
 #include "attach_meta_data.hpp"
 #include "../../../plugins/export/encode_json.hpp"
+#include <gst/gst.h>
+#include <gst/gstmeta.h>
 
 void filter(HailoROIPtr roi, GstVideoFrame *frame) {
   rapidjson::Document d;

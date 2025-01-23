@@ -17,6 +17,21 @@ shared_library('mobilenet_ssd_post',
     install_dir: post_proc_install_dir,
 )
 
+meta_data_post_sources = [
+    'attach_meta_data/attach_meta_data.cpp'
+]
+
+shared_library('attach_meta_data',
+    meta_data_post_sources,
+    cpp_args : hailo_lib_args,
+    include_directories: [hailo_general_inc, include_directories('./')],
+    dependencies : post_deps+[gst_dep,glib_dep],
+    gnu_symbol_visibility : 'default',
+    install: true,
+    install_dir: post_proc_install_dir,
+)
+
+
 ################################################
 # DETECTION SOURCES - YOLOV5M
 ################################################

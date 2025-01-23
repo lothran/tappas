@@ -14,10 +14,10 @@ void filter(HailoROIPtr roi, GstVideoFrame *frame) {
   rapidjson::StringBuffer buffer;
   buffer.Clear();
   rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
-  jsonDoc.Accept(writer);
+  d.Accept(writer);
   static const gchar *tags[] = {NULL};
   auto meta_info = gst_meta_register_custom("mymeta", tags, NULL, NULL, NULL);
-  auto meta = gst_buffer_add_custom_meta(*frame.buffer, "mymeta");
+  auto meta = gst_buffer_add_custom_meta(frame->buffer, "mymeta");
   auto metadata = gst_custom_meta_get_structure(meta);
   auto str = g_string_new(buffer.GetString());
   gst_structure_set(metadata, "property_name", G_TYPE_STRING, str, nullptr);

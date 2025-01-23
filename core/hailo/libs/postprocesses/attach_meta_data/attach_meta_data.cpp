@@ -9,8 +9,8 @@
 #include <gst/gstmeta.h>
 
 void filter(HailoROIPtr roi, GstVideoFrame *frame) {
-  rapidjson::Document d;
-  encode_json::encode_hailo_objects_to_json(d, d.allocator(), frame);
+  rapidjson::Document d(rapidjson::kObjectType);
+  encode_json::encode_hailo_objects_to_json(d, d.GetAllocator(), frame);
   rapidjson::StringBuffer buffer;
   buffer.Clear();
   rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
